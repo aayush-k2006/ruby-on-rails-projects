@@ -1,13 +1,71 @@
-<h1>Hello, Aayush!</h1>
+<%= stylesheet_link_tag 'index.css' %>
 
 
-<ul>
-    <% @articles.each do |article| %>
-    <li>
-        <%= link_to article.title, article %>
-        </a>
-    </li>
-    <% end %>
-<ul>
 
-<h1><%= link_to "New Article", new_article_path %> </h1>
+<div class="nav-section">
+    <div class="logo">
+        <h1>FLEETPANDA</h1>
+    </div>
+
+    <div class= "nav-lists">
+        <ul>
+            <li>Home</li>
+            <li>Add Article</li> 
+            <li>About Us</li> 
+        </ul>
+    </div>
+
+
+    <div class="search-box">
+        <input type="text" placholder="Search">
+        <button type="button">Search</button>
+    </div>
+
+
+    <div class="profile">
+        <% if user_signed_in? %>
+          <%= link_to "Profile", edit_user_registration_path %>
+        <% end %>
+    </div>
+
+
+    <div class= "login-logout">
+        <%if user_signed_in? %>
+            <div class= "logout"> 
+                <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+            </div>
+        <% else %>
+            <div class= "signin">
+                <%= button_to "SignIn", new_user_session_path, method: :get %>
+             </div>
+             <div class= "signup">
+                <%= button_to "SignUp", new_user_registration_path, method: :get%>
+            </div>
+        <% end %>
+    </div>
+
+</div><br>
+
+<div class= "body"> 
+    <h1>Here are the list of Articles</h1>
+
+
+    <h2>Our blog has <%= Article.public_count %> articles and counting! </h2>
+
+    <ol>
+        <% @articles.each do |article| %>
+            <% unless article.archived? %>
+                <li>
+                    <%= link_to article.title, article %>
+                </li>
+                           
+            <% end %>
+        <% end %>
+    </ol>
+
+    <% if user_signed_in? %>
+        <h3><%= link_to "Add New Article", new_article_path %><h3>  
+    <% else %>
+        <p> Login for adding your articles </p>
+    <%end %>    
+</div>

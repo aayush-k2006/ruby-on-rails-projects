@@ -1,0 +1,11 @@
+<% @post.each do |post| %>
+
+
+    <h1> <%= post.title%> </h1>
+    
+    <p><%= post.description%></p>
+   
+    <p><%= post.created_at%></p>
+     <hr>
+<% end %>
+

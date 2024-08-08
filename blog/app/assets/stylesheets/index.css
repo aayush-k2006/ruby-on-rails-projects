@@ -1,0 +1,72 @@
+
+
+
+.body{
+    border: 2px solid  black;
+}
+
+.nav-section{
+    margin-top: 5px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-lists{
+    width: 50%;
+    display: flex;
+
+}
+
+.nav-lists ul{
+    padding: 20px 0;
+    width: 80%;
+    display: flex;
+    list-style: none;
+
+}
+
+.nav-lists ul li{
+
+    font-weight: bold;
+    font-size: 16px;
+    text-align:center ;
+    margin-left: 100px;
+    width: 15%;
+}
+
+
+.search-box{
+    padding: 16px;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    font-size: 18px;
+    text-align: center;
+}
+
+
+
+.login-logout{
+    width: 7.5%;
+    display: flex;
+    gap: 10px;
+    padding: 16px 0;
+}
+
+.logout{
+    margin-left: 60px;
+}
+
+
+
+.profile{
+    margin-left: 10%;
+    padding-left: 50px;
+    padding: 20px 0;
+}
